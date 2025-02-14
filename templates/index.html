@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Mots de Passe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Générateur de Mots de Passe 🔐</h1>
+        <form method="POST">
+            <label for="length">Longueur du mot de passe :</label>
+            <input type="number" name="length" min="8" required>
+            <button type="submit">Générer</button>
+        </form>
+        
+        {% if password %}
+        <div class="result">
+            <strong>Mot de passe :</strong> <span>{{ password }}</span>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
